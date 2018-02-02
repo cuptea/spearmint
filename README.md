@@ -3,8 +3,8 @@ Modification
 
 Some changes are made to make spearmit run with python 3.6.
 
-```python
-	./spearmint ../examples/dejong/config.pb --driver=local --method=GPEIOptChooser --method-args=noiseless=1 --method-args=use_multiprocessing=0
+```bash
+	bin $ ./spearmint ../examples/dejong/config.pb --driver=local --method=GPEIOptChooser --method-args=noiseless=1 --method-args=use_multiprocessing=0
 ```
 
 --- 
