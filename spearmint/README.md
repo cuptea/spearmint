@@ -3,8 +3,6 @@ Modificaiton
 
 Some changes are made to make spearmint work with python 3.6
 
-Currently, only the dejong example is working
-
 ```python
 /spearmint ../examples/dejong/config.pb --driver=local --method=GPEIOptChooser --method-args=noiseless=1 --method-args=use_multiprocessing=0
 ```
