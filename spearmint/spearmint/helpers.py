@@ -39,7 +39,7 @@ def grid_for(job):
 
 def file_write_safe(path, data):
     '''Write data to a temporary file, then move to the destination path.'''
-    fh = tempfile.NamedTemporaryFile(mode='w', delete=False)
+    fh = tempfile.NamedTemporaryFile(mode='wb', delete=False)
     fh.write(data)
     fh.close()
     cmd = 'mv "%s" "%s"' % (fh.name, path)
@@ -51,9 +51,11 @@ def save_experiment(filename, expt):
 
 
 def load_experiment(filename):
-    fh = open(filename, 'rb')
+    fh = open(filename, 'r')
     expt = Experiment()
-    text_format.Merge(fh.read(), expt)
+    a= fh.read()
+    print("dfdf",a)
+    text_format.Merge(a, expt)
     fh.close()
     return expt
 

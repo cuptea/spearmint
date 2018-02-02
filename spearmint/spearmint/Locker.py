@@ -35,12 +35,13 @@ class Locker:
         self.locks = {}
 
     def __del__(self):
-        for filename in self.locks.keys():
+        for filename in list(self.locks.keys()):
             self.locks[filename] = 1
             self.unlock(filename)
 
     def lock(self, filename):
-        if self.locks.has_key(filename):
+        #if self.locks.has_key(filename):
+        if filename in list(self.locks.keys()):
             self.locks[filename] += 1
             return True
         else:
@@ -51,7 +52,8 @@ class Locker:
             return not fail
 
     def unlock(self, filename):
-        if not self.locks.has_key(filename):
+        #if not self.locks.has_key(filename):
+        if not filename in list(self.locks.keys()):
             #sys.stderr.write("Trying to unlock not-locked file %s.\n" % (filename))
             return True
         if self.locks[filename] == 1:

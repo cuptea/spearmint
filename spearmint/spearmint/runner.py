@@ -194,7 +194,8 @@ def run_mcr_job(job):
     # Change into the directory.
     os.chdir(job.expt_dir)
 
-    if os.environ.has_key('MATLAB'):
+    #if os.environ.has_key('MATLAB'):
+    if 'MATLAB' in os.environ:
         mcr_loc = os.environ['MATLAB']
     else:
         mcr_loc = MCR_LOCATION

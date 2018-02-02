@@ -1,5 +1,3 @@
-
-
 class DispatchDriver(object):
     def submit_job(job):
         '''Schedule a job for execution.'''

@@ -29,7 +29,7 @@ class CMAChooser:
 
         if os.path.exists(self.state_pkl):
             fh    = open(self.state_pkl, 'r')
-            state = cPickle.load(fh)
+            state = pickle.load(fh)
             fh.close()
 
             #TODO: setup config and state values from state, or setup fresh
@@ -49,7 +49,7 @@ class CMAChooser:
         # and this to load it back...
 #    >>> es = pickle.load(open('saved-cma-object.pkl', 'rb'))
 
-        cPickle.dump({ 'dims'   : self.D,
+        pickle.dump({ 'dims'   : self.D,
                        'ls'     : self.ls,
                        'amp2'   : self.amp2,
                        'noise'  : self.noise,
