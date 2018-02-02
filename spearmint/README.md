@@ -4,7 +4,7 @@ Modificaiton
 Some changes are made to make spearmint work with python 3.6
 
 ```python
-/spearmint ../examples/dejong/config.pb --driver=local --method=GPEIOptChooser --method-args=noiseless=1 --method-args=use_multiprocessing=0
+bin $ ./spearmint ../examples/dejong/config.pb --driver=local --method=GPEIOptChooser --method-args=noiseless=1 --method-args=use_multiprocessing=0
 ```
 ---
 
