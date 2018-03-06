@@ -67,7 +67,7 @@ class GPEIChooser:
         self.locker.lock_wait(self.state_pkl)
 
         # Write the hyperparameters out to a Pickle.
-        fh = tempfile.NamedTemporaryFile(mode='w', delete=False)
+        fh = tempfile.NamedTemporaryFile(mode='wb', delete=False)
         pickle.dump({ 'dims'   : self.D,
                        'ls'     : self.ls,
                        'amp2'   : self.amp2,
@@ -86,7 +86,7 @@ class GPEIChooser:
         self.locker.lock_wait(self.state_pkl)
 
         if os.path.exists(self.state_pkl):
-            fh    = open(self.state_pkl, 'r')
+            fh    = open(self.state_pkl, 'rb')
             state = pickle.load(fh)
             fh.close()
 
@@ -142,7 +142,7 @@ class GPEIChooser:
 
             overall_ei = np.zeros((cand.shape[0], self.mcmc_iters))
 
-            for mcmc_iter in xrange(self.mcmc_iters):
+            for mcmc_iter in range(self.mcmc_iters):
 
                 self.sample_hypers(comp, vals)
                 log("mean: %f  amp: %f  noise: %f  min_ls: %f  max_ls: %f"
